@@ -7,7 +7,7 @@ class Book
 
 public:
 
-    Book()
+    Book(string, string, int)
     {
 
         namebook = "unknown";
@@ -72,9 +72,9 @@ private:
 int main()
 {
 
-    Book b1;
-    Book b2("The Engineers and the Price System","Thorstein Bunde Veblen",1921);
-    Book b2("The Theory of Leisure Class","Thorstein Bunde Veblen",1899);
+    Book b1();
+    Book b2("The Engineers and the Price System" , "Thorstein Bunde Veblen" , 1921);
+    Book b3("The Theory of Leisure Class" , "Thorstein Bunde Veblen" , 1899);
 
     b1.setnamebook("Harry Potter and the Methods of Rationality");
     b1.setcreator("Eliezer S. Yudkowsky");
@@ -117,3 +117,4 @@ int main()
 
     return 0;
 }
+
