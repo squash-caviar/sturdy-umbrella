@@ -12,7 +12,7 @@ public:
 
         namebook = "unknown";
         creator = "unknown";
-        year = "404";
+        year = 404;
 
     };
 
