@@ -80,27 +80,27 @@ int main()
     b1.setcreator("Eliezer S. Yudkowsky");
     b1.setyear("2015")
 
-    count << b1.getnamebook() << "   " << b1.getcreator() << b1.getyear() << endl;
-    count << b2.getnamebook() << "   " << b2.getcreator() << b2.getyear() << endl;
-    count << b3.getnamebook() << "   " << b3.getcreator() << b3.getyear() << endl;
+    cout << b1.getnamebook() << "   " << b1.getcreator() << b1.getyear() << endl;
+    cout << b2.getnamebook() << "   " << b2.getcreator() << b2.getyear() << endl;
+    cout << b3.getnamebook() << "   " << b3.getcreator() << b3.getyear() << endl;
 
     Book lib[3];
 
-    string sbuf;
-    int sbuf;
+    string sbuf= "NaN";
+    int ybuf = 0;
 
     for (int i = 1; i<4; i++)
     {
 
-    count << "enter name book ";
+    cout << "enter name book ";
     cin >> sbuf;
     lib[i].setnamebook(sduf);
 
-    count << "enter name creator ";
+    cout << "enter name creator ";
     cin >> sbuf;
     lib[i].setcreator(sduf);
 
-    count << "enter year of writing ";
+    cout << "enter year of writing ";
     cin >> ybuf;
     lib[i].setyear(yduf);
 
@@ -110,11 +110,10 @@ int main()
     for (int i = 1; i<4; i++)
     {
 
-    count << lib[i].getnamebook() << "  " << lib.getcreator() << "  " << lib.getyear() << endl;
+    cout << lib[i].getnamebook() << "  " << lib.getcreator() << "  " << lib.getyear() << endl;
 
     }
 
 
     return 0;
 }
-
