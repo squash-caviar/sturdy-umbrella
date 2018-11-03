@@ -1,0 +1,5 @@
+1 The_C++_Programming_Language Bjarne_Stroustrup 1997
+2 C_++_Basic_course Herbert_Shieldt 2010
+3 Object_Oriented_Programming_in_C_++ Bjarne_Stroustrup 2013
+4 Effective_use_of_STL Scott_Meyers 2002
+5 C_++_Standard_library Nikolai_Jossatis 2012
