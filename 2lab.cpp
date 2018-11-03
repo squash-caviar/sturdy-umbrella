@@ -14,7 +14,7 @@ private:
 
 public:
 
-    Book ();
+    Book ();;
 
     Book (string, string, int);;
 
@@ -81,16 +81,16 @@ int main()
     b1.setcreator("Eliezer S. Yudkowsky");
     b1.setyear(2015);
 
-    cout << b1.getnamebook() << "   " << b1.getcreator() << b1.getyear() << endl;
-    cout << b2.getnamebook() << "   " << b2.getcreator() << b2.getyear() << endl;
-    cout << b3.getyear() << "   " << b3.getcreator() << b3.getyear() << endl;
+    cout << b1.getnamebook() << "   " << b1.getcreator() << "   " << b1.getyear() << endl;
+    cout << b2.getnamebook() << "   " << b2.getcreator() << "   " << b2.getyear() << endl;
+    cout << b3.getnamebook() << "   " << b3.getcreator() << "   " << b3.getyear() << endl;
 
     Book lib[3];
 
     string sbuf= "NaN";
     int ybuf = 0;
 
-    for (int i = 1; i<4; i++)
+    for (int i = 0; i<3; i++)
     {
 
         cout << "enter name book ";
@@ -108,7 +108,7 @@ int main()
     }
 
 
-    for (int i = 1; i<4; i++)
+    for (int i = 0; i<3; i++)
     {
 
         cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
