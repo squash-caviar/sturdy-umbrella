@@ -31,8 +31,7 @@ public:
 
     string getcreator();;
 
-    int getyear();;
-
+    int getyear();
 
 };
 
@@ -72,12 +71,13 @@ int Book::getyear() {
     return year;
 }
 
+/*
 void read()
 {
 
     ifstream read_stream;
     read_stream.open("./file.txt");
-    
+
     string sbuf;
     int ybuf;
 
@@ -92,14 +92,14 @@ void read()
 
             read_stream >> sbuf;
             lib[i].setcreator(sbuf);
-     
+
             read_stream >> ybuf;
             lib[i].setyear(ybuf);
 
         }
-    read_stream.close();
+        read_stream.close();
     }
-    
+
     else
         cout<<"No file!"<<endl;
 }
@@ -108,8 +108,8 @@ void read()
 void view ()
 {
 
-for (int i = 0; i<3; i++)
-    cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl; 
+    for (int i = 0; i<3; i++)
+        cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
 }
 
 
@@ -167,17 +167,17 @@ void save ()
     ofstream write_stream;
     write_stream.open(file_name);
 
-        for (int i=0; i<4; i++)
-        {
+    for (int i=0; i<4; i++)
+    {
 
-            write_stream << lib[i].getnamebook() << " ";
-            write_stream << lib[i].getcreator() << " ";
-            write_stream << lib[i].getyear() << endl;
+        write_stream << lib[i].getnamebook() << " ";
+        write_stream << lib[i].getcreator() << " ";
+        write_stream << lib[i].getyear() << endl;
 
-        }
-        write_stream.close();
+    }
+    write_stream.close();
 
-}
+}*/
 
 int main()
 {
@@ -197,7 +197,7 @@ int main()
     cout << b3.getnamebook() << "   " << b3.getcreator() << "   " << b3.getyear() << endl;
 
     Book lib[3];
-    
+
     string sbuf;
     int ybuf;
 
@@ -227,20 +227,20 @@ int main()
     }
 
 
-int j = 1;
+    int j = 1;
 
     while (j)
     {
 
-        
+
         cout << "Menu"<< endl;
         cout << "1.Read"<< endl;
         cout << "2.View"<< endl;
         cout << "3.Edit"<< endl;
-        cout << "4.Oldest book"<< endl;         
+        cout << "4.Oldest book"<< endl;
         cout << "5.Saving in new file "<< endl;
         cout << "6.Exit"<< endl;
-        cout << "press to ";
+        cout << "enter a number to continue " << endl;
 
         int i = 0;
 
@@ -248,50 +248,140 @@ int j = 1;
 
         cout << endl;
 
-        switch ( i )
-        {
+        switch ( i ) {
 
-        case 1:
+            case 1: {
+                //read(lib);
 
-            read();
-            cout << endl;
-            break;
+                ifstream read_stream;
+                read_stream.open("./file.txt");
 
-        case 2:
+                string sbuf;
+                int ybuf;
 
-            view();
-            cout << endl;
-            break;
+                if (read_stream) {
 
-        case 3:
+                    for (int i = 0; i < 3; i++) {
 
-            edit();
-            cout << endl;
-            break;
+                        read_stream >> sbuf;
+                        lib[i].setnamebook(sbuf);
 
-        case 4:
+                        read_stream >> sbuf;
+                        lib[i].setcreator(sbuf);
 
-            old_book();
-            cout << endl;
-            break;
+                        read_stream >> ybuf;
+                        lib[i].setyear(ybuf);
 
-        case 5:
+                    }
+                    read_stream.close();
+                } else
+                    cout << "No file!" << endl;
 
-            save();
-            cout << endl;
-            break;
+                cout << endl;
+                break;
+            }
 
-        case 6:
+            case 2:
+            {
+                //view();
 
-            j = 0;
-            break;
+                for (int i = 0; i<3; i++)
+                    cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
+
+                cout << endl;
+                break;
+            }
+
+            case 3: {
+                //edit();
+
+                int row = 0;
+
+                cout << "Select a row to edit - ";
+                cin >> row;
+
+                cout << "Book title - ";
+                cin >> sbuf;
+                lib[row].setnamebook(sbuf);
+
+                cout << "Workbook author - ";
+                cin >> sbuf;
+                lib[row].setcreator(sbuf);
+
+                cout << "Publication date - ";
+                cin >> ybuf;
+                lib[row].setyear(ybuf);
+
+                cout << endl;
+                break;
+            }
+
+            case 4:
+             {
+                //old_book();
+
+                int t = 9999;
+                int num = 0;
+
+                for (int i=0; i<3; i++)
+                {
+
+                    if (lib[i].getyear() < t)
+                    {
+
+                        t = lib[i].getyear();
+                        num = i;
+
+                    }
+
+                }
+
+                cout << "The old edition - " << lib[num].getnamebook() << "  ";
+                cout << lib[num].getcreator() << "  " << lib[num].getyear() << endl;
+
+                cout << endl;
+                break;
+              }
+
+            case 5:
+            {
+                //save();
+
+                string file_name;
+                cout << "Save as.. ";
+                cin >> file_name;
+                file_name = "./ " + file_name + ".txt";
+
+                ofstream write_stream;
+                write_stream.open(file_name);
+
+                for (int i=0; i<4; i++)
+                {
+
+                    write_stream << lib[i].getnamebook() << " ";
+                    write_stream << lib[i].getcreator() << " ";
+                    write_stream << lib[i].getyear() << endl;
+
+                }
+                write_stream.close();
+
+                cout << endl;
+                break;
+            }
 
 
-        default:
+            case 6:
 
-            cout << "doh"<< endl;
-            cout << endl;
-            break;
+                j = 0;
+                break;
+
+
+            default:
+            {
+                cout << "doh"<< endl;
+                cout << endl;
+                break;
+            }
 
         }
     }
