@@ -80,7 +80,7 @@ void read()
     
     string sbuf;
     int ybuf;
-    
+
     if (read_stream)
     {
 
@@ -197,7 +197,7 @@ int main()
     cout << b3.getnamebook() << "   " << b3.getcreator() << "   " << b3.getyear() << endl;
 
     Book lib[3];
-
+    
     string sbuf;
     int ybuf;
 
