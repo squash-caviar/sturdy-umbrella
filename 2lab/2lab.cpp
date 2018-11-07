@@ -5,116 +5,6 @@
 
 using namespace std;
 
-
-
-/*
-void read()
-{
-
-    ifstream read_stream;
-    read_stream.open("./file.txt");
-
-    string sbuf;
-    int ybuf;
-
-    if (read_stream)
-    {
-
-        for (int i = 0; i<3; i++)
-        {
-
-            read_stream >> sbuf;
-            lib[i].setnamebook(sbuf);
-
-            read_stream >> sbuf;
-            lib[i].setcreator(sbuf);
-
-            read_stream >> ybuf;
-            lib[i].setyear(ybuf);
-
-        }
-        read_stream.close();
-    }
-
-    else
-        cout<<"No file!"<<endl;
-}
-
-
-void view ()
-{
-
-    for (int i = 0; i<3; i++)
-        cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
-}
-
-
-void old_book ()
-{
-
-    int t = 9999;
-    int num = 0;
-
-    for (int i=0; i<3; i++)
-    {
-
-        if (lib[i].year < t)
-        {
-
-            t = lib[i].year;
-            num = i;
-
-        }
-
-    }
-
-    cout << "The old edition - " << lib[num].getnamebook() << "  " << lib[num].getcreator() << "  " << lib[num].getyear() << endl;
-
-}
-
-
-void edit ()
-{
-    int row = 0;
-
-    view();
-    cout << "Select a row to edit - ";
-    cin >> row;
-
-    cout << "Book title - ";
-    cin >> lib[row].setnamebook();
-
-    cout << "Workbook author - ";
-    cin >> lib[row].setcreator();
-
-    cout << "Publication date - ";
-    cin >> lib[row].setyear();
-
-}
-
-void save ()
-{
-
-    string file_name;
-    cout << "Save as.. ";
-    cin >> file_name;
-    file_name = "./ " + file_name + ".txt";
-
-    ofstream write_stream;
-    write_stream.open(file_name);
-
-    for (int i=0; i<4; i++)
-    {
-
-        write_stream << lib[i].getnamebook() << " ";
-        write_stream << lib[i].getcreator() << " ";
-        write_stream << lib[i].getyear() << endl;
-
-    }
-    write_stream.close();
-
-}*/
-
 int main()
 {
 
@@ -187,7 +77,7 @@ int main()
         switch ( i ) {
 
             case 1: {
-                //read(lib);
+                //read(lib)
 
                 ifstream read_stream;
                 read_stream.open("./file.txt");
@@ -219,7 +109,7 @@ int main()
 
             case 2:
             {
-                //view();
+                //view
 
                 for (int i = 0; i<3; i++)
                     cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
@@ -229,7 +119,7 @@ int main()
             }
 
             case 3: {
-                //edit();
+                //edit
 
                 int row = 0;
 
@@ -254,7 +144,7 @@ int main()
 
             case 4:
              {
-                //old_book();
+                //old_book
 
                 int t = 9999;
                 int num = 0;
@@ -281,7 +171,7 @@ int main()
 
             case 5:
             {
-                //save();
+                //save
 
                 string file_name;
                 cout << "Save as.. ";

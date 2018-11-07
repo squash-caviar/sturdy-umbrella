@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+//#include <ctime>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ private:
     bool Power_supply;
     bool Frash_light;
     short int Signal_level;
-    short int IMEI;
+    long int IMEI;
     string Model;
     string Brand;
 
@@ -31,7 +32,7 @@ public:
 
     void Network_search();;
 
-    string getinfo();;
+    void Printinfo();;
 
 };
 
@@ -40,9 +41,18 @@ Mobile_phone::Mobile_phone()
     Power_supply = 0;
     Frash_light = 0;
     Signal_level = 0;
-    IMEI = rand() % (1000000000 - RAND_MAX) + RAND_MAX;
+
     Model = "unknown";
     Brand = "unknown";
+
+    long int temp;
+    srand ( time(NULL) );
+    temp = rand() % 2147483647 + 1000000000;
+    
+    if (temp > 0)
+        IMEI = temp;
+        else 
+            IMEI = temp * -1;
 }
 
 Mobile_phone::Mobile_phone(string m, string b)
@@ -50,7 +60,9 @@ Mobile_phone::Mobile_phone(string m, string b)
     Power_supply = 0;
     Frash_light = 0;
     Signal_level = 0;
-    IMEI = rand() % (1000000000 - RAND_MAX) + RAND_MAX;
+    
+    srand ( time(NULL) ); 
+    IMEI = rand() % 5;
     Model = m;
     Brand = b;
 }
@@ -86,17 +98,18 @@ void Mobile_phone::Flash_off()
 void Mobile_phone::Network_search()
 {
     if (Power_supply)
-        Signal_level = rand() % (1 - 5) + 5;
+        srand ( time(NULL) ); 
+        Signal_level = rand() % 5;
 }
 
-string Mobile_phone::getinfo()
+void Mobile_phone::Printinfo()
 {
-    string info;
-    /*Power_supply 
-    Frash_light 
-    Signal_level 
-    IMEI 
-    Model 
-    Brand */
-    return info;
+    
+    cout << "Brand: " << Brand << endl; 
+    cout << "Model: " << Model << endl; 
+    cout << "IMEI: " << IMEI << endl;
+    cout << "Phone included: " << Power_supply << endl;
+    cout << "Signal level: " << Signal_level << endl; 
+    cout << "Flashlight included: " << Frash_light << endl;
+     
 }
