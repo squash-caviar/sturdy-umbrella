@@ -7,7 +7,7 @@ Transport_vehicle::Transport_vehicle()
 {
 }
 
- Transport_vehicle::~Transport_vehicle()
+Transport_vehicle::~Transport_vehicle()
 {
 }
 
