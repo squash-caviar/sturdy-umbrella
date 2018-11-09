@@ -2,73 +2,71 @@
 #include <string>
 #include <fstream>
 
-
 using namespace std;
- 
 
 class Book
 {
 
 private:
 
-    string namebook;
-    string creator;
-    int year;
+	string namebook;
+	string creator;
+	int year;
 
 public:
 
-    Book ();;
+	Book ();;
 
-    Book (string, string, int);;
+	Book (string, string, int);;
 
 
 
-    void setnamebook (string temp);;
+	void setnamebook (string temp);;
 
-    void setcreator(string temp);;
+	void setcreator(string temp);;
 
-    void setyear(int temp);;
+	void setyear(int temp);;
 
-    string getnamebook();;
+	string getnamebook();;
 
-    string getcreator();;
+	string getcreator();;
 
-    int getyear();
+	int getyear();
 
 };
 
 Book::Book() {
-    namebook = "unknown";
-    creator = "unknown";
-    year = 404;
+	namebook = "unknown";
+	creator = "unknown";
+	year = 404;
 }
 
 Book::Book(string s, string st, int t) {
-    namebook = s;
-    creator = st;
-    year = t;
+	namebook = s;
+	creator = st;
+	year = t;
 }
 
 void Book::setnamebook(string temp) {
-    namebook = temp;
+	namebook = temp;
 }
 
 void Book::setcreator(string temp) {
-    creator = temp;
+	creator = temp;
 }
 
 void Book::setyear(int temp) {
-    year = temp;
+	year = temp;
 }
 
 string Book::getnamebook() {
-    return namebook;
+	return namebook;
 }
 
 string Book::getcreator() {
-    return creator;
+	return creator;
 }
 
 int Book::getyear() {
-    return year;
+	return year;
 }
