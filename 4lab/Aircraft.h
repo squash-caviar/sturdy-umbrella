@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Aircraft.cpp"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ private:
 
 public:
 	Aircraft();
+	Aircraft::Aircraft(short int F, short int W);
 	~Aircraft();
 
 	short getFlight_altitude();
@@ -20,5 +22,7 @@ public:
 	short getWingspan();
 
 	void setWingspan(short Wingspan);
+
+	void Display();
 };
 

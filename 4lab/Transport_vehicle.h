@@ -19,7 +19,8 @@ protected:
 
 
 public:
- 	Transport_vehicle();;
+ 	Transport_vehicle();
+	Transport_vehicle::Transport_vehicle(string M, string B, short int R, short int Q, short int Ma);
 	~Transport_vehicle();
 
 	string getModel();
@@ -40,5 +41,7 @@ public:
 
 	short getMax_speed();
 
-	void setMax_speed(short Max_speed);;
+	void setMax_speed(short Max_speed);
+
+	virtual void Display();
 };

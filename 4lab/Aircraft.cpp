@@ -1,9 +1,17 @@
-#include "Aircraft.h"
-
+#include <iostream>
+#include <string>
 using namespace std;
 
 Aircraft::Aircraft()
 {
+	Flight_altitude = 404;
+	Wingspan = 404;
+}
+
+Aircraft::Aircraft(short int F, short int W)
+{
+	Flight_altitude = F;
+	Wingspan = W;
 }
 
 Aircraft::~Aircraft()
@@ -26,3 +34,7 @@ void Aircraft::setWingspan(short Wingspan) {
 	Aircraft::Wingspan = Wingspan;
 }
 
+void Aircraft::Display()
+    {
+		cout << Flight_altitude << Wingspan;
+    }

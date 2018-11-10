@@ -7,6 +7,15 @@ Transport_vehicle::Transport_vehicle()
 {
 }
 
+Transport_vehicle::Transport_vehicle(string M, string B, short int R, short int Q, short int Ma)
+{	
+	Model = M;
+	Brand = B;
+	Release_year = R;
+	Quantity_of_passengers = Q;
+	Max_speed = Ma;
+}
+
 Transport_vehicle::~Transport_vehicle()
 {
 }

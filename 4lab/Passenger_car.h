@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Passenger_car.cpp"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ private:
 
 public:
 	Passenger_car();
+	Passenger_car(string t, short i);
 	~Passenger_car();
 
 	string getEngine_type() ;
@@ -20,5 +22,8 @@ public:
 	short getEngine_output() ;
 
 	void setEngine_output(short Engine_output);
+
+	void Display();
+   
 };
 
