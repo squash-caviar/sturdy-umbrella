@@ -24,7 +24,7 @@ main()
 		cout << "4. Flashlight_on"<< endl;
 		cout << "5. Flashlight_off"<< endl;
 		cout << "6. Volume_up"<< endl;
-		cout << "7. Volume_off"<< endl;
+		cout << "7. Volume_down"<< endl;
 		cout << "8. Network_search"<< endl;
 		cout << "9. Exit"<< endl;
 		cout << "enter a number to continue " << endl;
@@ -69,10 +69,23 @@ main()
 
 			case 6:
 
-				Nokia_3310.Network_search();
+				Nokia_3310.Volume_up();
 				break;
 
 			case 7:
+
+				Nokia_3310.Volume_down();
+				break;
+
+
+			case 8:
+
+				Nokia_3310.Network_search();
+				break;
+
+
+
+			case 9:
 
 				j =0;
 				break;

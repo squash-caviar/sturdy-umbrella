@@ -9,7 +9,7 @@ int main()
 {
 
 	Book b1;
-	cout << b1.getnamebook() << "   " << b1.getcreator() << "   " << b1.getyear() << endl;
+	cout << b1.getnamebook() << "   " << b1.getcreator() << "   " << b1.getyear() << endl << endl;
 
 	Book b2 ("The Engineers and the Price System" , "Thorstein Bunde Veblen" , 1921);
 	Book b3 ("The Theory of Leisure Class" , "Thorstein Bunde Veblen" , 1899);

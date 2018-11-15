@@ -1,0 +1,3 @@
+The_C++_Programming_Language Bjarne_Stroustrup Í
+C_++_Basic_course Herbert_Shieldt Ú
+Object_Oriented_Programming_in_C_++ Bjarne_Stroustrup Ý
