@@ -21,14 +21,14 @@ int main()
 	cout << b1.getnamebook() << "   " << b1.getcreator() << "   " << b1.getyear() << endl;
 	cout << b2.getnamebook() << "   " << b2.getcreator() << "   " << b2.getyear() << endl;
 	cout << b3.getnamebook() << "   " << b3.getcreator() << "   " << b3.getyear() << endl;
-
+	
 	Book lib[3];
 
 	string sbuf;
 	int ybuf;
 
-	for (int i = 0; i<3; i++)
-	{
+	/*for (int i = 0; i<3; i++)
+	
 
 		cout << "enter name book ";
 		cin >> sbuf;
@@ -50,7 +50,7 @@ int main()
 
 		cout << lib[i].getnamebook() << "  " << lib[i].getcreator() << "  " << lib[i].getyear() << endl;
 
-	}
+	}*/
 
 
 	int j = 1;
@@ -65,7 +65,8 @@ int main()
 		cout << "3.Edit"<< endl;
 		cout << "4.Oldest book"<< endl;
 		cout << "5.Saving in new file "<< endl;
-		cout << "6.Exit"<< endl;
+		cout << "6.all_edit" << endl;
+		cout << "7.Exit"<< endl;
 		cout << "enter a number to continue " << endl;
 
 		int i = 0;
@@ -80,7 +81,11 @@ int main()
 				//read(lib)
 
 				ifstream read_stream;
-				read_stream.open("file.txt");
+				string file;
+				cout << "Name file: ";
+				cin >> file;
+				file = file + ".txt";
+				read_stream.open(file);
 
 				string sbuf;
 				int ybuf;
@@ -120,11 +125,12 @@ int main()
 
 			case 3: {
 				//edit
-
+				
 				int row = 0;
 
 				cout << "Select a row to edit - ";
 				cin >> row;
+				row = row - 1;
 
 				cout << "Book title - ";
 				cin >> sbuf;
@@ -184,12 +190,13 @@ int main()
 				for (int i=0; i<3; i++)
 				{
 					string temp;
+					int t;
 					temp = lib[i].getnamebook();
 					write_stream << temp << " ";
 					temp = lib[i].getcreator();
 					write_stream << temp << " ";
-					temp = lib[i].getyear();
-					write_stream << temp << endl;
+					t = lib[i].getyear();
+					write_stream << t << endl;
 
 				}
 				write_stream.close();
@@ -198,12 +205,34 @@ int main()
 				break;
 			}
 
-
 			case 6:
+			{
+					for (int i = 0; i<3; i++)
+					{
+
+						cout << "enter name book ";
+						cin >> sbuf;
+						lib[i].setnamebook(sbuf);
+
+						cout << "enter name creator ";
+						cin >> sbuf;
+						lib[i].setcreator(sbuf);
+
+						cout << "enter year of writing ";
+						cin >> ybuf;
+						lib[i].setyear(ybuf);
+					}
+			
+			break;
+			}
+
+
+			case 7:
 
 				j = 0;
 				break;
 
+			
 
 			default:
 			{
