@@ -134,6 +134,6 @@ void Mobile_phone::Printinfo()
 	cout << "Phone included: " << Power_supply << endl;
 	cout << "Signal level: " << Signal_level << endl; 
 	cout << "Volume: " << Volume << endl; 
-	cout << "Flashlight included: " << Frash_light << endl << endl;
+	cout << "Flashlight included: " << Frash_light << endl;
 	 
 }

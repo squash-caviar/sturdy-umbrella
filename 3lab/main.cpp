@@ -10,13 +10,15 @@ main()
 	Nokia_3310.Power_on();
 	Nokia_3310.Network_search();
 	Nokia_3310.Printinfo();
+	cout << endl;
 
 
 	int j = 1;
 
 	while (j)
 	{
-
+		
+		cout << endl;
 		cout << "Menu"<< endl;
 		cout << "1. Info"<< endl;
 		cout << "2. Power on"<< endl;
@@ -26,7 +28,7 @@ main()
 		cout << "6. Volume_up"<< endl;
 		cout << "7. Volume_down"<< endl;
 		cout << "8. Network_search"<< endl;
-		cout << "9. Exit"<< endl;
+		cout << "9. Exit"<< endl << endl;
 		cout << "enter a number to continue " << endl;
 
 		int i = 0;
