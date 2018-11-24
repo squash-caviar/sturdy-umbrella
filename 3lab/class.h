@@ -87,7 +87,7 @@ Mobile_phone::~Mobile_phone()
 void Mobile_phone::Power_on ()
 {
 	Power_supply = 1;
-	Network_search();
+	//Network_search();
 }
 
 void Mobile_phone::Power_off()
@@ -134,9 +134,9 @@ void Mobile_phone::Volume_down ()
 
 void Mobile_phone::Printinfo()
 {
-	if (Power_supply)
-		srand ( time(NULL) ); 
-		Signal_level = rand() % 5;
+	if (Power_supply == 1)
+		{srand ( time(NULL) ); 
+		Signal_level = rand() % 5;}
 	
 	cout << "Brand: " << Brand << endl; 
 	cout << "Model: " << Model << endl; 

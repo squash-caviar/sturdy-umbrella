@@ -8,7 +8,7 @@ int main()
 {
 	Mobile_phone Nokia_3310 ("Nokia", "3310");
 	Nokia_3310.Power_on();
-	Nokia_3310.Network_search();
+	//Nokia_3310.Network_search();
 	Nokia_3310.Printinfo();
 	cout << endl;
 
