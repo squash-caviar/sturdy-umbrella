@@ -67,8 +67,14 @@ Mobile_phone::Mobile_phone(string m, string b)
 	Signal_level = 0;
 	Volume = 0;
 	
-	srand ( time(NULL) ); 
-	IMEI = rand() % 5;
+	long int temp;
+	srand ( time(NULL) );
+	temp = rand() % 2147483647 + 1000000000;
+	
+	if (temp > 0)
+		IMEI = temp;
+		else 
+			IMEI = temp * -1;
 
 	Model = m;
 	Brand = b;
@@ -89,6 +95,7 @@ void Mobile_phone::Power_off()
 	Power_supply = 0;
 	Frash_light = 0;
 	Signal_level = 0;
+
 }
 
 void Mobile_phone::Flashlight_on()
@@ -102,17 +109,17 @@ void Mobile_phone::Flashlight_off()
 	Frash_light = 0;
 }
 
-void Mobile_phone::Network_search()
+/*void Mobile_phone::Network_search()
 {
 	if (Power_supply)
 		srand ( time(NULL) ); 
 		Signal_level = rand() % 5;
-}
+}*/
 
 void Mobile_phone::Volume_up ()
 {
 
-	if ((Volume < 100) && (Power_supply = 1))
+	if ((Volume < 100) && (Power_supply == 1)) 
 		Volume = Volume + 10;
 
 }
@@ -120,13 +127,16 @@ void Mobile_phone::Volume_up ()
 void Mobile_phone::Volume_down ()
 {
 
-	if ((Volume > 0 ) && (Power_supply = 1))
+	if ((Volume > 0 ) && (Power_supply == 1))
 		Volume = Volume - 10;
 
 }
 
 void Mobile_phone::Printinfo()
 {
+	if (Power_supply)
+		srand ( time(NULL) ); 
+		Signal_level = rand() % 5;
 	
 	cout << "Brand: " << Brand << endl; 
 	cout << "Model: " << Model << endl; 

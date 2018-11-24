@@ -4,7 +4,7 @@
 
 using namespace std;
 
-main()
+int main()
 {
 	Mobile_phone Nokia_3310 ("Nokia", "3310");
 	Nokia_3310.Power_on();
@@ -27,8 +27,8 @@ main()
 		cout << "5. Flashlight_off"<< endl;
 		cout << "6. Volume_up"<< endl;
 		cout << "7. Volume_down"<< endl;
-		cout << "8. Network_search"<< endl;
-		cout << "9. Exit"<< endl << endl;
+		//cout << "8. Network_search"<< endl;
+		cout << "8. Exit"<< endl << endl;
 		cout << "enter a number to continue " << endl;
 
 		int i = 0;
@@ -46,48 +46,55 @@ main()
 			
 			
 			case 2:
-			
+				
 				Nokia_3310.Power_on();
+				Nokia_3310.Printinfo();
 				break;
 			
 
 			case 3: 
 			
 				Nokia_3310.Power_off();
+				Nokia_3310.Printinfo();
 				break;
 			
 
 			case 4:
 			
 				Nokia_3310.Flashlight_on();
+				Nokia_3310.Printinfo();
 				break;
 
 
 			case 5:
 			
 				Nokia_3310.Flashlight_off();
+				Nokia_3310.Printinfo();
 				break;
 			
 
 			case 6:
 
 				Nokia_3310.Volume_up();
+				Nokia_3310.Printinfo();
 				break;
 
 			case 7:
 
 				Nokia_3310.Volume_down();
+				Nokia_3310.Printinfo();
 				break;
+
+
+			/*case 8:
+
+				Nokia_3310.Network_search();
+				Nokia_3310.Printinfo();
+				break;*/
+
 
 
 			case 8:
-
-				Nokia_3310.Network_search();
-				break;
-
-
-
-			case 9:
 
 				j =0;
 				break;
