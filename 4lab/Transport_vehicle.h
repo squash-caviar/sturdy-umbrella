@@ -1,3 +1,6 @@
+#ifndef TRANSPORT_VEHICLE_H
+#define TRANSPORT_VEHICLE_H
+
 #include <iostream>
 #include <string>
 #include "Transport_vehicle.cpp"
@@ -45,3 +48,5 @@ public:
 
 	virtual void Display();
 };
+
+#endif

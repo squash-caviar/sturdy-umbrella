@@ -1,3 +1,6 @@
+#ifndef AIRCRAFT_H
+#define AIRCRAFT_H
+
 #include <iostream>
 #include <string>
 #include "Aircraft.cpp"
@@ -26,3 +29,4 @@ public:
 	void Display();
 };
 
+#endif

@@ -1,3 +1,6 @@
+#ifndef PASSENGER_CAR_H
+#define PASSENGER_CAR_H
+
 #include <iostream>
 #include <string>
 #include "Passenger_car.cpp"
@@ -27,3 +30,4 @@ public:
    
 };
 
+#endif
