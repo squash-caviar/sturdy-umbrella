@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <fstream>
 #include "Aircraft.h"
 #include "Passenger_car.h"
 #include "Transport_vehicle.h"
