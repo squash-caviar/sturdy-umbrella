@@ -3,31 +3,20 @@
 
 #include <iostream>
 #include <string>
-#include "Passenger_car.cpp"
+#include "Transport.h"
 
 using namespace std;
 
-class Passenger_car:public Transport_vehicle
+
+class Passenger_car:public Transport
 {
 private:
-	string Engine_type;
-	short int Engine_output;
-
+    int Quantity_of_passengers;
 public:
-	Passenger_car();
-	Passenger_car(string t, short i);
-	~Passenger_car();
-
-	string getEngine_type() ;
-
-	void setEngine_type( string Engine_type);
-
-	short getEngine_output() ;
-
-	void setEngine_output(short Engine_output);
-
-	void Display();
-   
+    Passenger_car();
+    Passenger_car(string B, int R, int Q);
+    ~Passenger_car();
+    void Show();
 };
 
-#endif
+#endif //PASSENGER_CAR_H

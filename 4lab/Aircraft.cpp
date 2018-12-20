@@ -1,40 +1,24 @@
-#include <iostream>
-#include <string>
+#include "Aircraft.h"
+
 using namespace std;
 
 Aircraft::Aircraft()
 {
-	Flight_altitude = 404;
-	Wingspan = 404;
 }
 
-Aircraft::Aircraft(short int F, short int W)
+Aircraft::Aircraft(string B, int R, int W)
 {
-	Flight_altitude = F;
-	Wingspan = W;
+    Brand = B;
+    Release_year = R;
+    Wingspan = W;
 }
 
 Aircraft::~Aircraft()
 {
 }
 
-short Aircraft::getFlight_altitude() {
-	return Flight_altitude;
+void Aircraft::Show()
+{
+    cout << "Brand: " << Transport::Brand << " Release_year: " << Transport::Release_year;
+    cout << " Wingspan: " << Aircraft::Wingspan << endl;
 }
-
-void Aircraft::setFlight_altitude(short Flight_altitude) {
-	Aircraft::Flight_altitude = Flight_altitude;
-}
-
-short Aircraft::getWingspan()  {
-	return Wingspan;
-}
-
-void Aircraft::setWingspan(short Wingspan) {
-	Aircraft::Wingspan = Wingspan;
-}
-
-void Aircraft::Display()
-    {
-		cout << Flight_altitude << Wingspan;
-    }

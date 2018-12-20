@@ -1,81 +1,42 @@
 #include <iostream>
-#include <string>
-#include <cstdlib>
-#include <fstream>
-#include "Aircraft.h"
+#include "Transport.h"
 #include "Passenger_car.h"
-#include "Transport_vehicle.h"
+#include "Aircraft.h"
 
 using namespace std;
 
-class Transport_vehicle
+int main ()
 {
-private:
-	string Model;
-	string Brand;
-	short int Release_year;
-	short int Quantity_of_passengers;
-	short int Max_speed;
 
-public:
-	virtual void Display(){}
+    Passenger_car VAZ("VAZ", 1998, 4);
+    Passenger_car Mazda("Mazda", 1995, 5);
+    Aircraft Airobus("Airobus",2010, 150);
+    Aircraft Boeng("Boeng", 2006 , 165);
 
-};
+    Transport* tr[4];
 
-class Passenger_car:public Transport_vehicle
-{
-private:
-	string Engine_type;
-	short int Engine_output;
+    tr[0] = &VAZ;
+    tr[1] = &Mazda;
+    tr[2] = &Airobus;
+    tr[3] = &Boeng;
 
-public:
-Passenger_car()
-{
-	Engine_type = "NaN";
-	Engine_output = 404;
+    int max = 1000, i = 0, n = 0;
+
+    for(i=0; i<4; i++)
+        tr[i]->Show();
+
+    for(i = 0; i < 4; i++)
+    {
+        if (max < tr[i]->getRelease_year())
+            {
+                max = tr[i]->getRelease_year();
+                n = i;
+            }
+    }       
+
+    cout << "The newest vehicle is " << endl;
+    tr[n]->Show();
+
+    return 0;
+
 }
-
-void Display()
-{
-	cout << "Engine_type: " << Engine_type << " Engine_output: " << Engine_output << endl;
-
-}
-   
-};
-
-class Aircraft:public Transport_vehicle
-{
-private:
-	short int Flight_altitude;
-	short int Wingspan;
-
-public:
-	Aircraft()
-	{
-		Flight_altitude = 404;
-		Wingspan = 404;
-	}
-	
-	void Display() 
-	{
-		cout << "Flight_altitude: " << Flight_altitude << " Wingspan: " << Wingspan << endl;
-
-	}
-
-};
-
-int main()
-{
-	
-	Passenger_car hp;
-	Aircraft lg;
-	Transport_vehicle *d1 = &hp;
-	Transport_vehicle *d2 = &lg;
-
-	d1->Display();
-	d2->Display();
-
-	return 0;
-}
-
-

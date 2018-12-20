@@ -1,43 +1,25 @@
-#include <iostream>
-#include <string>
+#include "Passenger_car.h"
+
 using namespace std;
 
 Passenger_car::Passenger_car()
 {
-	Engine_type = "NaN";
-	Engine_output = 404;
+    Quantity_of_passengers = 0;
 }
 
-Passenger_car::Passenger_car(string t, short i)
+Passenger_car::Passenger_car(string B, int R, int Q)
 {
-	Engine_type = t;
-	Engine_output = i;
+    Brand = B;
+    Release_year = R;
+    Quantity_of_passengers = Q;
 }
 
 Passenger_car::~Passenger_car()
 {
 }
 
-
-string Passenger_car::getEngine_type() {
-	return Engine_type;
-}
-
-void Passenger_car::setEngine_type( string Engine_type) {
-	Passenger_car::Engine_type = Engine_type;
-}
-
-
-short Passenger_car::getEngine_output() {
-	return Engine_output;
-}
-
-void Passenger_car::setEngine_output(short Engine_output) {
-	Passenger_car::Engine_output = Engine_output;
-}
-
-
-void Passenger_car::Display()
+void Passenger_car::Show()
 {
-	cout <<"Engine_type: " << Engine_type << "Engine_output: " << Engine_output << endl;
+    cout << "Brand: " << Transport::Brand << " Release_year: " << Transport::Release_year;
+    cout << " Quantity_of_passengers: " << Passenger_car::Quantity_of_passengers << endl;
 }
