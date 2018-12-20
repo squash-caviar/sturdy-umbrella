@@ -1,0 +1,83 @@
+cocairo@thinkpad:~$ sqlite3 dbname
+SQLite version 3.16.2 2017-01-06 16:32:41
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE labs (
+   ...> number INTEGER PRIMARY KEY NOT NULL,
+   ...> theme VARCHAR(11),
+   ...> done integer);
+sqlite> INSERT INTO labs(number, theme, done)
+   ...> VALUES
+   ...> (1,'array',1),                                              
+   ...> (2,'class',1),                                              
+   ...> (3,'qt',0),                                                 
+   ...> (4,'sql',0);   
+sqlite> SELECT * FROM labs;                                         
+1|array|1                                                           
+2|class|1                                                           
+3|qt|0                                                              
+4|sql|0
+sqlite> SELECT * FROM labs ORDER BY number DESC;                    
+4|sql|0                                                             
+3|qt|0                                                              
+2|class|1                                                           
+1|array|1                                                           
+sqlite> SELECT * FROM labs WHERE done < 1;
+3|qt|0
+4|sql|0
+sqlite> SELECT * FROM labs WHERE done > 0;
+1|array|1
+2|class|1
+sqlite> SELECT theme FROM labs WHERE done < 1;
+qt
+sql
+sqlite> SELECT * FROM labs WHERE theme = 'qt' and done = 0;
+3|qt|0
+sqlite> INSERT INTO labs(number, theme, done)
+   ...> VALUES (5,'SVN',0);
+sqlite> SELECT * FROM labs;       
+1|array|1                                                           
+2|class|1                                                           
+3|qt|0
+4|sql|0
+5|SVN|0
+sqlite> UPDATE labs SET done = 1 WHERE theme = 'SVN';
+sqlite> SELECT * FROM labs;                                         
+1|array|1                                                           
+2|class|1                                                           
+3|qt|0                                                              
+4|sql|0                                                             
+5|SVN|1                                                    
+sqlite> UPDATE labs SET theme = 'sql' WHERE  number = 5;
+sqlite> SELECT * FROM labs;
+1|array|1
+2|class|1
+3|qt|0
+4|sql|0
+5|sql|0
+sqlite> SELECT COUNT(theme) FROM labs;
+5
+sqlite> SELECT DISTINCT theme FROM labs;
+array
+class
+qt
+sql
+sqlite> SELECT COUNT(DISTINCT theme) FROM labs;
+4
+sqlite> DELETE FROM labs WHERE number = 5;
+sqlite> SELECT * FROM labs;
+1|array|1
+2|class|1
+3|qt|0
+4|sql|0
+sqlite>  SELECT COUNT(theme) FROM labs;
+4
+sqlite> .exit
+cocairo@thinkpad:~$  
+
+
+
+
+         
+
+
+  
