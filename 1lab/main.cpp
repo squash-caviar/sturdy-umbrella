@@ -140,6 +140,7 @@ int main ()
         cout << "2.View"<< endl;
         cout << "3.Edit"<< endl;
         cout << "4.Oldest book"<< endl;         //перепиcать на динамическую память?
+                                                //не надо
         cout << "5.Saving in new file "<< endl;
         cout << "6.Exit"<< endl;
         cout << "press to ";
