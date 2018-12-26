@@ -57,7 +57,7 @@ void view ()
 void old_book ()
 {
 
-    int t = 9999;
+    int t = library[0].year; //Потому что "а вдруг >9999"
     int num = 0;
 
     for (int i=0; i<4; i++)
